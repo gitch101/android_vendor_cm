@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     CMWallpapers \
     Apollo \
-    CMUpdater \
     CMFileManager \
     LockClock
 
@@ -204,8 +203,8 @@ ifdef CM_BUILDTYPE
         CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
     endif
 else
-    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    # If CM_BUILDTYPE is not defined, set to GITCHY
+    CM_BUILDTYPE := GITCHY
     CM_EXTRAVERSION :=
 endif
 
@@ -215,7 +214,7 @@ else
     ifeq ($(PRODUCT_VERSION_MINOR),0)
         CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
     else
-        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)-$(CM_BUILD)$(CM_EXTRAVERSION)
+        CM_VERSION := Gitchy ROM v0.1
     endif
 endif
 
